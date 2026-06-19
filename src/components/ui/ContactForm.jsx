@@ -22,6 +22,7 @@ export function ContactForm({
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
+    telefone: "",
     servico: defaultService || "",
     mensagem: "",
     lgpd: false,
@@ -66,6 +67,7 @@ export function ContactForm({
       setFormData({
         nome: "",
         email: "",
+        telefone: "",
         servico: "",
         mensagem: "",
         lgpd: false,
@@ -111,7 +113,7 @@ export function ContactForm({
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Nome */}
           <TextField
             label="Nome Completo"
@@ -129,6 +131,15 @@ export function ContactForm({
             value={formData.email}
             onChange={(e) => handleChange("email", e.target.value)}
             error={errors.email}
+            disabled={loading}
+          />
+
+          {/* Telefone */}
+          <TextField
+            label="Telefone de Contato"
+            placeholder="(11) 99999-9999"
+            value={formData.telefone}
+            onChange={(e) => handleChange("telefone", e.target.value)}
             disabled={loading}
           />
         </div>
@@ -151,7 +162,7 @@ export function ContactForm({
             <option value="compliance-regulatorio">Compliance Regulatório</option>
             <option value="controladoria-governanca">Controladoria & Governança</option>
             <option value="investigacoes-privadas">Investigações Privadas</option>
-            <option value="auditorias">Auditorias de Processo</option>
+            <option value="auditorias">Auditorias</option>
             <option value="servicos-juridicos">Serviços Jurídicos</option>
           </select>
           {errors.servico && (
@@ -161,8 +172,8 @@ export function ContactForm({
 
         {/* Mensagem */}
         <TextArea
-          label="Detalhamento da Demanda"
-          placeholder="Descreva resumidamente o escopo da auditoria ou compliance regulatório demandado..."
+          label="Detalhe sua Dúvida"
+          placeholder="Descreva sua dúvida ou necessidade relacionada a auditoria, compliance ou segurança empresarial..."
           value={formData.mensagem}
           onChange={(e) => handleChange("mensagem", e.target.value)}
           error={errors.mensagem}

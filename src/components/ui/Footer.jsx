@@ -1,5 +1,8 @@
 import React from "react";
-import { Shield, Mail, Phone, MapPin } from "lucide-react";
+import { Shield, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { COMPANY_EMAIL } from "@/data/siteConfig";
+
+const WHATSAPP_NUMBER = "+55 21 97451-6547"; // TODO: substituir pelo número real antes de publicar
 
 /**
  * Premium corporate footer for GSR Company.
@@ -8,9 +11,9 @@ export function Footer({
   logoText = "GSR Company",
   logoIcon: LogoIcon = Shield,
   cnpj = "CNPJ: 00.000.000/0001-00",
-  address = "Av. Paulista, 1000 - Bela Vista, São Paulo - SP",
+  address = "Av. Dr. Manoel Teles, 77 - Centro, Duque de Caxias - RJ, 25010-090",
   phone = "+55 (11) 3200-4000",
-  email = "contato@gsrcompany.com.br",
+  email = COMPANY_EMAIL,
   links = [
     { label: "Serviços", href: "#servicos" },
     { label: "Sobre Nós", href: "#sobre" },
@@ -20,13 +23,15 @@ export function Footer({
   className = "",
   ...props
 }) {
+  const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, "")}`;
+
   return (
     <footer
       className={`border-t border-gsr-border bg-gsr-surface/50 w-full py-16 px-6 ${className}`}
       {...props}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10">
-        
+
         {/* Logo & Info column */}
         <div className="md:col-span-5 space-y-4">
           <div className="flex items-center gap-2.5">
@@ -74,6 +79,17 @@ export function Footer({
             <li className="flex items-center gap-2">
               <Phone className="h-4 w-4 text-gsr-gold shrink-0" />
               <span>{phone}</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <MessageCircle className="h-4 w-4 text-gsr-gold shrink-0" />
+              <a
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gsr-gold transition-colors duration-200"
+              >
+                {WHATSAPP_NUMBER}
+              </a>
             </li>
             <li className="flex items-start gap-2">
               <MapPin className="h-4 w-4 text-gsr-gold shrink-0 mt-0.5" />

@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { Menu, X, ArrowUpRight, Shield } from "lucide-react";
+import React, { useState, useRef } from "react";
+import { Menu, X, ArrowUpRight, Shield, ChevronDown, ArrowRight } from "lucide-react";
 
 /**
  * Sticky header with background blur, flexible SVG logo space, and editorial animated link underlines.
@@ -17,10 +17,35 @@ export function HeaderNav({
   ],
   ctaLabel = "Falar com Consultor",
   onCtaClick,
+  onServiceSelect,
   className = "",
   ...props
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const closeTimeoutRef = useRef(null);
+
+  const handleDropdownEnter = (idx) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setOpenDropdown(idx);
+  };
+
+  const handleDropdownLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 150);
+  };
+
+  const handleAnchorClick = (e, href) => {
+    if (href && href.startsWith("#")) {
+      e.preventDefault();
+      const id = href.slice(1);
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header
@@ -28,7 +53,7 @@ export function HeaderNav({
       {...props}
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        
+
         {/* Flexible Logo Container */}
         <a href="#" className="flex items-center gap-3 group">
           {LogoIcon ? (
@@ -45,15 +70,91 @@ export function HeaderNav({
 
         {/* Desktop Links (Editorial Animation) */}
         <nav className="hidden md:flex items-center gap-8">
-          {links.map((link, idx) => (
-            <a
-              key={idx}
-              href={link.href}
-              className="font-sans text-xs font-semibold uppercase tracking-wider text-gsr-text-primary hover:text-gsr-gold transition-colors duration-300 editorial-link"
-            >
-              {link.label}
-            </a>
-          ))}
+          {links.map((link, idx) => {
+            if (link.dropdownItems && link.dropdownItems.length > 0) {
+              return (
+                <div
+                  key={idx}
+                  className="relative"
+                  onMouseEnter={() => handleDropdownEnter(idx)}
+                  onMouseLeave={handleDropdownLeave}
+                >
+                  <button
+                    type="button"
+                    aria-expanded={openDropdown === idx}
+                    className="flex items-center gap-1 font-sans text-xs font-semibold uppercase tracking-wider text-gsr-text-primary hover:text-gsr-gold transition-colors duration-300 cursor-pointer"
+                  >
+                    {link.label}
+                    <ChevronDown
+                      className={`h-3.5 w-3.5 transition-transform duration-300 ${
+                        openDropdown === idx ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  <div
+                    className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 transition-all duration-300 ease-out ${
+                      openDropdown === idx
+                        ? "opacity-100 translate-y-0 visible"
+                        : "opacity-0 -translate-y-2 invisible pointer-events-none"
+                    }`}
+                  >
+                    <div className="w-[600px] bg-white border border-gsr-border rounded-card shadow-gsr-lg overflow-hidden">
+                      <div className="grid grid-cols-2 gap-1 p-3">
+                        {link.dropdownItems.map((item) => {
+                          const Icon = item.icon;
+                          return (
+                            <button
+                              key={item.slug}
+                              type="button"
+                              onClick={() => {
+                                setOpenDropdown(null);
+                                onServiceSelect && onServiceSelect(item.slug);
+                              }}
+                              className="group flex items-start gap-3 p-3 rounded-gsr hover:bg-gsr-surface transition-colors duration-200 w-full text-left cursor-pointer"
+                            >
+                              <div className="mt-0.5 p-2 rounded-gsr bg-gsr-surface text-gsr-text-primary group-hover:bg-gsr-gold/10 group-hover:text-gsr-gold transition-colors duration-200 shrink-0">
+                                {Icon && <Icon className="h-4 w-4" />}
+                              </div>
+                              <div className="min-w-0">
+                                <span className="block text-sm font-semibold text-gsr-text-primary group-hover:text-gsr-gold-dark transition-colors duration-200">
+                                  {item.title}
+                                </span>
+                                <span className="block text-xs text-gsr-text-secondary leading-snug mt-0.5 line-clamp-2">
+                                  {item.description}
+                                </span>
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+                      <div className="border-t border-gsr-border px-4 py-3 bg-gsr-surface/40">
+                        <a
+                          href={link.href}
+                          onClick={(e) => { handleAnchorClick(e, link.href); setOpenDropdown(null); }}
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-gsr-gold-dark hover:text-gsr-gold transition-colors duration-200"
+                        >
+                          Ver Todas as Áreas
+                          <ArrowRight className="h-3.5 w-3.5" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
+            return (
+              <a
+                key={idx}
+                href={link.href}
+                onClick={(e) => handleAnchorClick(e, link.href)}
+                className="font-sans text-xs font-semibold uppercase tracking-wider text-gsr-text-primary hover:text-gsr-gold transition-colors duration-300 editorial-link"
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </nav>
 
         {/* Desktop CTA Button */}
@@ -85,7 +186,7 @@ export function HeaderNav({
               <a
                 key={idx}
                 href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => { handleAnchorClick(e, link.href); setMobileMenuOpen(false); }}
                 className="font-sans text-sm font-semibold uppercase tracking-wider text-gsr-text-primary hover:text-gsr-gold transition-colors duration-200"
               >
                 {link.label}

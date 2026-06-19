@@ -146,7 +146,7 @@ export const servicesContent = {
     subtitle: "Assessoria consultiva societária de alta complexidade e defesa tributária",
     badge: "Serviços Jurídicos",
     icon: Briefcase,
-    leadParagraph: "Garantimos segurança e representação jurídica robusta em negociações societárias, litígios complexos e penal econômico.",
+    leadParagraph: "Garantimos segurança e representação jurídica robusta em negociações societárias, litígios complexos, penal econômico e atos notariais e cartorários.",
     richContent: [
       "O ambiente regulatório e tributário brasileiro é um dos mais complexos do mundo. Provemos assessoria de excelência técnica focada na estruturação societária societária de alta performance, reorganização tributária de ativos e defesas judiciais corporativas.",
       "Nosso time de advogados associados atua no contencioso estratégico, elaborando pareceres irrefutáveis para defesas de executivos e empresas em inquéritos civis ou processos fiscais complexos."
@@ -155,7 +155,8 @@ export const servicesContent = {
       "Assessoria consultiva em reorganização tributária e planejamento fiscal",
       "Defesa corporativa estratégica em direito penal econômico e societário",
       "Elaboração de acordos societários, cisões, incorporações e due diligence M&A",
-      "Representação arbitral de alta complexidade em disputas contratuais"
+      "Representação arbitral de alta complexidade em disputas contratuais",
+      "Atuação notarial e cartorária: lavratura de escrituras, procurações, autenticações e atos cartorários societários"
     ],
     sidebarInfo: {
       title: "Segurança de Ativos",

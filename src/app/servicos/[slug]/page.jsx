@@ -38,7 +38,7 @@ export default async function ServicePage({ params }) {
   );
 
   return (
-    <div className="bg-gsr-bg min-h-screen text-gsr-text-primary flex flex-col relative scroll-smooth selection:bg-gsr-gold/20 selection:text-gsr-gold-dark">
+    <div className="bg-gsr-bg min-h-screen text-gsr-text-primary flex flex-col relative selection:bg-gsr-gold/20 selection:text-gsr-gold-dark">
       
       {/* Navigation Header */}
       <HeaderNav
@@ -47,6 +47,8 @@ export default async function ServicePage({ params }) {
           { label: "Voltar ao Início", href: "/#" },
           { label: "Áreas de Atuação", href: "/#servicos" },
           { label: "Sobre Nós", href: "/#sobre" },
+          { label: "Nosso Processo", href: "/#processo" },
+          { label: "FAQ", href: "/#faq" },
           { label: "Contato", href: "#contato" },
         ]}
       />

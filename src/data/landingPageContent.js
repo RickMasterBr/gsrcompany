@@ -55,34 +55,46 @@ export const landingPageContent = {
       },
       {
         slug: "auditorias",
-        title: "Auditorias de Processo",
+        title: "Auditorias",
         description: "Revisão imparcial de contratos comerciais de larga escala, validação de integridade de fornecedores e certificações de processos operacionais.",
         icon: FileText,
       },
       {
         slug: "servicos-juridicos",
         title: "Serviços Jurídicos",
-        description: "Assessoria consultiva em direito tributário complexo, contencioso societário estratégico e defesa criminal econômica corporativa.",
+        description: "Assessoria consultiva em direito tributário complexo, contencioso societário estratégico, defesa criminal econômica corporativa e atuação notarial e cartorária.",
         icon: Briefcase,
       },
     ],
   },
-  stats: {
+  differentiators: {
+    subtitle: "Como Trabalhamos",
+    title: "Rigor corporativo, desde o primeiro dia",
+    description: "Somos uma operação nova, mas estruturada como uma corporação: processos documentados, equipe sênior e compliance nativo — sem fase de amadurecimento.",
     items: [
       {
-        number: "20+",
-        label: "Anos de mercado",
-        description: "Tradição consolidada no suporte a conselhos executivos e escritórios internacionais.",
+        id: "rigor-corporativo",
+        iconName: "ShieldCheck",
+        label: "Rigor Corporativo",
+        tag: "Rigor Corporativo",
+        title: "Rigor corporativo desde o primeiro dia",
+        description: "Seguimos os mesmos protocolos de documentação, controles internos e compliance que orientam grandes corporações — sem fase de amadurecimento.",
       },
       {
-        number: "99.2%",
-        label: "Casos de sucesso",
-        description: "Casos corporativos de alta confidencialidade solucionados com conformidade jurídica.",
+        id: "equipe-senior",
+        iconName: "Award",
+        label: "Equipe Sênior",
+        tag: "Equipe Sênior",
+        title: "Equipe técnica sênior, não trainee",
+        description: "Nosso corpo técnico reúne profissionais com trajetória consolidada em auditoria, compliance, investigação e direito corporativo, atuando sob um modelo de governança estruturado desde a fundação.",
       },
       {
-        number: "R$ 5B+",
-        label: "Ativos auditados",
-        description: "Mitigação direta de perdas patrimoniais, fraudes industriais e multas regulatórias.",
+        id: "estrutura-agil",
+        iconName: "Zap",
+        label: "Estrutura Ágil",
+        tag: "Estrutura Ágil",
+        title: "Estrutura ágil, sem burocracia herdada",
+        description: "Sem camadas de decisão de uma operação antiga: contato direto com quem executa, resposta rápida e escopo adaptado de verdade ao porte de cada cliente.",
       },
     ],
   },
@@ -107,4 +119,105 @@ export const landingPageContent = {
     lgpdLabel: "Consentimento e Termos de Privacidade",
     lgpdDescription: "Declaro ciente de que as informações compartilhadas serão tratadas sob estrito sigilo corporativo e em conformidade legal.",
   },
+};
+
+export const process = {
+  subtitle: "Nosso Processo",
+  title: "Como conduzimos cada atendimento",
+  description: "Um fluxo estruturado, do diagnóstico confidencial ao acompanhamento contínuo de conformidade.",
+  items: [
+    {
+      title: "Diagnóstico Confidencial",
+      subtitle: "Etapa 1",
+      description: "Entendemos o escopo, mapeamos os riscos e definimos com você o que precisa ser investigado, auditado ou estruturado, sob sigilo desde a primeira conversa.",
+      image: "/assets/imagemChaveiro1.jpeg",
+    },
+    {
+      title: "Levantamento e Análise Técnica",
+      subtitle: "Etapa 2",
+      description: "Nossa equipe sênior conduz o trabalho de campo: auditorias, investigações, análise documental ou jurídica, conforme o escopo definido.",
+      image: "/assets/imagemChaveiro2.jpeg",
+    },
+    {
+      title: "Execução e Estruturação",
+      subtitle: "Etapa 3",
+      description: "Implementamos as recomendações, estruturamos processos de compliance e segurança, e acompanhamos a adoção junto ao seu time.",
+      image: "/assets/imagemChaveiro1.jpeg",
+    },
+    {
+      title: "Relatório e Acompanhamento",
+      subtitle: "Sempre",
+      description: "Entregamos relatórios documentados, prontos para uso em decisões, contratos ou processos, com acompanhamento contínuo de conformidade.",
+      image: "/assets/imagemChaveiro2.jpeg",
+    },
+  ],
+};
+
+export const missionVisionValues = [
+  {
+    id: "missao",
+    number: "01",
+    title: "Missão",
+    description: "Prover soluções corporativas estratégicas que assegurem proteção empresarial, governança eficiente e integridade operacional, apoiando organizações na mitigação de riscos, no fortalecimento de seus processos decisórios e na sustentabilidade de seus negócios, com rigor técnico, confidencialidade absoluta e excelência profissional.",
+    iconName: "Target",
+  },
+  {
+    id: "visao",
+    number: "02",
+    title: "Visão",
+    description: "Ser reconhecida como referência nacional em consultoria corporativa de alta confiabilidade, destacando-se pela capacidade de antecipar riscos, proteger ativos estratégicos e fortalecer a governança das organizações, contribuindo para ambientes empresariais mais seguros, éticos e resilientes.",
+    iconName: "Eye",
+  },
+  {
+    id: "valores",
+    number: "03",
+    title: "Valores",
+    description: "Os princípios que orientam cada decisão e cada entrega da GSR Company.",
+    values: [
+      { label: "Integridade", detail: "Ética, transparência e confiança em todas as relações." },
+      { label: "Confidencialidade", detail: "Proteção absoluta das informações estratégicas." },
+      { label: "Excelência", detail: "Soluções técnicas com qualidade e precisão." },
+      { label: "Governança", detail: "Conformidade, gestão de riscos e decisões responsáveis." },
+      { label: "Resultados", detail: "Eficiência operacional com impacto mensurável." },
+      { label: "Compromisso", detail: "Responsabilidade em cada projeto e decisão." },
+      { label: "Inovação", detail: "Evolução contínua com segurança e sustentabilidade." },
+    ],
+    iconName: "ShieldCheck",
+  },
+];
+
+export const faq = {
+  subtitle: "Perguntas Frequentes",
+  title: "Tire suas dúvidas antes de entrar em contato",
+  description: "Reunimos as perguntas mais comuns sobre como a GSR atua, sob qual sigilo e em que formato.",
+  items: [
+    {
+      question: "Quais áreas a GSR atende?",
+      answer: "Segurança empresarial, compliance regulatório, controladoria e governança, investigações privadas, auditorias e serviços jurídicos (incluindo atos notariais e cartorários).",
+    },
+    {
+      question: "Como funciona o primeiro contato?",
+      answer: "Você preenche o formulário seguro do site (ou usa o e-mail/WhatsApp do rodapé) descrevendo a necessidade. Um consultor especializado na área retorna em até 24 horas úteis por canal seguro.",
+    },
+    {
+      question: "As informações que envio ficam protegidas?",
+      answer: "Sim. Toda comunicação é tratada sob sigilo profissional e em conformidade com a LGPD, usada exclusivamente para qualificar e conduzir o atendimento solicitado.",
+    },
+    {
+      question: "Os atendimentos são presenciais ou remotos?",
+      answer: "O diagnóstico inicial costuma ser remoto e sob sigilo. Dependendo do escopo — auditorias on-site ou segurança patrimonial, por exemplo — o trabalho pode incluir visitas presenciais.",
+    },
+    {
+      question: "A GSR emite relatórios que posso usar em contratos ou processos?",
+      answer: "Sim. Os relatórios são estruturados para servir de base documental em renegociações contratuais, processos de compliance e, quando aplicável, em procedimentos judiciais.",
+    },
+    {
+      question: "É preciso ser uma grande corporação pra contratar a GSR?",
+      answer: "Não. Atendemos empresas que buscam rigor corporativo na gestão de riscos, adaptando o escopo do serviço ao porte e à necessidade de cada cliente.",
+    },
+    {
+      question: "Quanto tempo leva um diagnóstico ou auditoria?",
+      answer: "Varia com o escopo e a complexidade do caso. Depois do diagnóstico inicial, enviamos um prazo estimado antes de começar o trabalho formalmente.",
+    },
+  ],
 };

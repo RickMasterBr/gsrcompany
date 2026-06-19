@@ -14,6 +14,7 @@ export function Button({
   loading = false,
   icon: Icon,
   iconPosition = "right",
+  href,
   className = "",
   children,
   ...props
@@ -38,11 +39,32 @@ export function Button({
 
   const selectedVariant = variantClasses[variant] || variantClasses.filled;
   const selectedSize = sizeClasses[size] || sizeClasses.default;
+  const composedClass = `${baseClasses} ${selectedVariant} ${selectedSize} ${className}`;
+
+  const iconLeft = Icon && iconPosition === "left" && (
+    <Icon className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:-translate-x-0.5" />
+  );
+  const iconRight = Icon && iconPosition === "right" && (
+    <Icon className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+  );
+  const label = (
+    <span className={variant === "ghost" ? "editorial-link" : ""}>{children}</span>
+  );
+
+  if (href) {
+    return (
+      <a href={href} className={composedClass} {...props}>
+        {iconLeft}
+        {label}
+        {iconRight}
+      </a>
+    );
+  }
 
   return (
     <button
       disabled={disabled || loading}
-      className={`${baseClasses} ${selectedVariant} ${selectedSize} ${className}`}
+      className={composedClass}
       {...props}
     >
       {/* Loading Spinner */}
@@ -67,21 +89,9 @@ export function Button({
           />
         </svg>
       )}
-
-      {/* Prefix Icon */}
-      {!loading && Icon && iconPosition === "left" && (
-        <Icon className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:-translate-x-0.5" />
-      )}
-
-      {/* Content */}
-      <span className={variant === "ghost" ? "editorial-link" : ""}>
-        {children}
-      </span>
-
-      {/* Suffix Icon with micro-animation */}
-      {!loading && Icon && iconPosition === "right" && (
-        <Icon className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-      )}
+      {!loading && iconLeft}
+      {label}
+      {!loading && iconRight}
     </button>
   );
 }
