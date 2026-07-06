@@ -158,12 +158,12 @@ export function ContactForm({
             } outline-none transition-all duration-300 rounded-gsr px-4 h-12 text-sm text-gsr-text-primary placeholder:text-gsr-text-secondary/60 disabled:opacity-50 disabled:cursor-not-allowed`}
           >
             <option value="">Selecione uma área de atuação...</option>
-            <option value="seguranca-empresarial">Segurança Empresarial</option>
+            <option value="seguranca-empresarial">Segurança Patrimonial e Empresarial</option>
             <option value="compliance-regulatorio">Compliance Regulatório</option>
-            <option value="controladoria-governanca">Controladoria & Governança</option>
-            <option value="investigacoes-privadas">Investigações Privadas</option>
-            <option value="auditorias">Auditorias</option>
-            <option value="servicos-juridicos">Serviços Jurídicos</option>
+            <option value="governanca-corporativa">Governança Corporativa</option>
+            <option value="gestao-riscos">Gestão de Riscos</option>
+            <option value="inteligencia-corporativa">Inteligência Corporativa</option>
+            <option value="outsource-management">Outsource Management</option>
           </select>
           {errors.servico && (
             <p className="text-xs font-medium text-rose-500 mt-0.5">{errors.servico}</p>

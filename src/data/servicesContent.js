@@ -1,4 +1,4 @@
-import { Shield, Scale, Settings, Search, FileText, Briefcase } from "lucide-react";
+import { Shield, Scale, Settings, Search, AlertTriangle, Briefcase } from "lucide-react";
 
 /**
  * Conteúdo estruturado para as 6 páginas dinâmicas de serviços da GSR Company.
@@ -7,7 +7,7 @@ import { Shield, Scale, Settings, Search, FileText, Briefcase } from "lucide-rea
 export const servicesContent = {
   "seguranca-empresarial": {
     slug: "seguranca-empresarial",
-    title: "Segurança Empresarial e Inteligência Preventiva",
+    title: "Segurança Patrimonial e Empresarial e Inteligência Preventiva",
     subtitle: "Proteção estratégica de ativos físicos, digitais e humanos",
     badge: "Segurança Corporativa",
     icon: Shield,
@@ -59,40 +59,67 @@ export const servicesContent = {
       alt: "Variante do chaveiro GSR Company focado em compliance e conformidade"
     }
   },
-  "controladoria-governanca": {
-    slug: "controladoria-governanca",
-    title: "Controladoria & Governança Corporativa",
-    subtitle: "Estruturação de processos, transparência fiscal e proteção de caixa",
-    badge: "Controladoria",
+  "governanca-corporativa": {
+    slug: "governanca-corporativa",
+    title: "Governança Corporativa e Estruturação Societária",
+    subtitle: "Estruturas de decisão sólidas e segurança jurídica para o crescimento da empresa",
+    badge: "Governança Corporativa",
     icon: Settings,
-    leadParagraph: "Apoiamos conselhos de administração a blindar processos contábeis, otimizar a controladoria fiscal e mitigar riscos de governança corporativa.",
+    leadParagraph: "Apoiamos conselhos de administração na estruturação de processos decisórios, acordos societários e operações de M&A, com respaldo jurídico completo, incluindo atuação notarial e cartorária.",
     richContent: [
-      "Uma governança sólida exige um sistema de controles internos rígido e independente. Nossos auditores avaliam processos orçamentários, detectam ineficiências de caixa e estruturam fluxos contábeis alinhados com práticas de auditoria global.",
-      "Desenhamos matrizes de riscos fiscais e administrativos, promovendo a separação adequada de funções e garantindo transparência técnica exigida pelos acionistas e investidores."
+      "Uma governança sólida exige clareza nas estruturas de decisão e segurança jurídica em cada movimento societário. Desenhamos a arquitetura de governança da sua empresa — da composição do conselho às regras de sucessão — alinhada às melhores práticas do IBGC.",
+      "Nosso time jurídico conduz due diligence completa em fusões, aquisições, cisões e incorporações, além de formalizar acordos societários, procurações e atos notariais e cartorários necessários para blindar cada decisão estratégica."
     ],
     features: [
-      "Auditoria independente de processos orçamentários e fiscais",
-      "Mapeamento de matrizes de riscos internos e fluxos de caixa",
       "Desenho de estruturas de governança para empresas familiares e corporativas",
-      "Assessoria em prestação de contas fiscais para investidores de grande porte"
+      "Due diligence jurídica e societária em operações de M&A, cisões e incorporações",
+      "Elaboração de acordos de acionistas, procurações e contratos societários",
+      "Atuação notarial e cartorária: lavratura de escrituras e autenticações societárias"
     ],
     sidebarInfo: {
       title: "Transparência de Processos",
-      description: "A separação sistemática de funções contábeis combinada com auditoria contínua mitiga desvios internos em até 95% das ocorrências registradas.",
-      ctaLabel: "Solicitar Matriz de Riscos"
+      description: "Empresas com governança e estruturação societária bem definidas reduzem em até 95% os desvios internos e ganham até 15% de prêmio de valorização em operações de M&A.",
+      ctaLabel: "Solicitar Diagnóstico de Governança"
     },
     media: {
       src: "/assets/imagemChaveiro2.jpeg",
-      alt: "Close-up do escudo GSR Company - Símbolo de governança e controle contábil"
+      alt: "Close-up do escudo GSR Company - Símbolo de governança corporativa"
     }
   },
-  "investigacoes-privadas": {
-    slug: "investigacoes-privadas",
-    title: "Investigações Privadas Corporativas",
+  "gestao-riscos": {
+    slug: "gestao-riscos",
+    title: "Gestão de Riscos e Auditoria de Terceiros",
+    subtitle: "Identificação, mensuração e mitigação de riscos fiscais, operacionais e de fornecedores",
+    badge: "Gestão de Riscos",
+    icon: AlertTriangle,
+    leadParagraph: "Mapeamos riscos fiscais, administrativos e de cadeia de suprimentos, auditamos fornecedores críticos e atuamos na defesa estratégica de contenciosos tributários e penais econômicos.",
+    richContent: [
+      "Toda operação carrega riscos que, sem mapeamento adequado, viram passivos. Construímos matrizes de risco fiscal e administrativo, auditamos fornecedores e terceiros on-site, e identificamos vulnerabilidades antes que se tornem incidentes.",
+      "Quando o risco já virou litígio, nosso time atua na defesa estratégica em contencioso tributário, penal econômico e societário, com pareceres técnicos que sustentam decisões de mitigação em qualquer instância."
+    ],
+    features: [
+      "Matrizes de risco fiscal, administrativo e de cadeia de suprimentos",
+      "Auditorias presenciais (on-site) de fornecedores e capacidade real de terceiros",
+      "Validação documental de licenças regulatórias e fiscais obrigatórias",
+      "Defesa estratégica em contencioso tributário e direito penal econômico"
+    ],
+    sidebarInfo: {
+      title: "Garantia de Cadeia",
+      description: "Mais de 70% das interrupções operacionais e multas solidárias B2B decorrem de falhas de conformidade em fornecedores não auditados, e pareceres preventivos reduzem litígios tributários em até 75%.",
+      ctaLabel: "Solicitar Matriz de Riscos"
+    },
+    media: {
+      src: "/assets/imagemChaveiro1.jpeg",
+      alt: "Render do chaveiro GSR Company - Gestão de Riscos"
+    }
+  },
+  "inteligencia-corporativa": {
+    slug: "inteligencia-corporativa",
+    title: "Inteligência Corporativa e Investigações Privadas",
     subtitle: "Elucidação científica de desvios, vazamentos e espionagem industrial",
-    badge: "Inteligência & Investigação",
+    badge: "Inteligência Corporativa",
     icon: Search,
-    leadParagraph: "Provamos fraudes, identificamos autoria de vazamento de segredos industriais e neutralizamos concorrência desleal sob sigilo profissional absoluto.",
+    leadParagraph: "Aplicamos inteligência corporativa para identificar vazamento de segredos industriais, neutralizar concorrência desleal e investigar desvios de conduta sob sigilo profissional absoluto.",
     richContent: [
       "Casos de desvio ético e roubo de patentes exigem rigor forense irrefutável. Nossa equipe conta com peritos cibernéticos, analistas de contrainteligência e ex-investigadores experientes que reúnem evidências válidas para processos judiciais.",
       "Trabalhamos de forma cirúrgica na identificação de fraudes na folha de fornecedores, sabotagem industrial e vazamento de banco de dados estratégicos, garantindo anonimato absoluto para a organização contratante."
@@ -113,59 +140,31 @@ export const servicesContent = {
       alt: "Close-up do chaveiro GSR Company de ângulo superior - Inteligência Corporativa"
     }
   },
-  "auditorias": {
-    slug: "auditorias",
-    title: "Auditorias de Processo e Fornecedores",
-    subtitle: "Avaliação imparcial de contratos de larga escala e mitigação de terceiros",
-    badge: "Auditoria Externa",
-    icon: FileText,
-    leadParagraph: "Avaliamos a conformidade contratual de fornecedores críticos, certificamos fluxos operacionais e prevenimos passivos em cadeia de suprimentos.",
+  "outsource-management": {
+    slug: "outsource-management",
+    title: "Outsource Management",
+    subtitle: "Gestão operacional especializada de processos críticos terceirizados",
+    badge: "Outsource Management",
+    icon: Briefcase,
+    leadParagraph: "Assumimos a gestão de processos operacionais críticos da sua empresa, com controle, agilidade e indicadores mensuráveis — sem que você precise estruturar uma equipe interna do zero.",
     richContent: [
-      "Parceiros comerciais e terceiros podem representar um risco reputacional invisível. Conduzimos auditorias completas no local (on-site audits), verificando práticas trabalhistas, regularidade fiscal, capacidade produtiva real e conformidade ética de parceiros estratégicos.",
-      "Emitimos relatórios de auditoria irrefutáveis que servem de base contratual sólida para renovações, distratos ou negociações de fusão de empresas."
+      "Nem toda função crítica precisa ser internalizada para ser bem gerida. Estruturamos a operação terceirizada de processos específicos — administrativos, de compliance ou de controle — com a mesma exigência técnica de uma equipe própria, mas com a agilidade de um modelo enxuto.",
+      "Cada operação é acompanhada por indicadores de performance claros, relatórios periódicos e um ponto de contato direto, eliminando a camada de burocracia comum em modelos tradicionais de terceirização."
     ],
     features: [
-      "Auditorias presenciais (on-site) de infraestrutura e capacidade real",
-      "Avaliação de passivos fiscais, tributários e ambientais de terceiros",
-      "Validação documental de licenças regulatórias e fiscais obrigatórias",
-      "Desenho de programas contínuos de conformidade para cadeia de suprimentos"
+      "Gestão operacional terceirizada de processos administrativos e de compliance",
+      "Indicadores de performance (KPIs) e relatórios periódicos de acompanhamento",
+      "Estrutura escalável, ajustada ao porte e à necessidade de cada cliente",
+      "Ponto de contato direto, sem camadas de decisão de modelos tradicionais"
     ],
     sidebarInfo: {
-      title: "Garantia de Cadeia",
-      description: "Mais de 70% das interrupções operacionais e multas solidárias B2B decorrem de falhas de conformidade em fornecedores não auditados devidamente.",
-      ctaLabel: "Solicitar Escopo de Auditoria"
+      title: "Eficiência Mensurável",
+      description: "Modelos de outsource bem estruturados reduzem custos operacionais fixos e aumentam a velocidade de resposta a demandas críticas, sem abrir mão de controle e conformidade.",
+      ctaLabel: "Solicitar Proposta de Gestão"
     },
     media: {
       src: "/assets/imagemChaveiro2.jpeg",
-      alt: "Render do chaveiro da GSR em fundo neutro - Auditorias de Processo"
+      alt: "Render do chaveiro GSR Company - Outsource Management"
     }
   },
-  "servicos-juridicos": {
-    slug: "servicos-juridicos",
-    title: "Serviços Jurídicos e Contencioso Estratégico",
-    subtitle: "Assessoria consultiva societária de alta complexidade e defesa tributária",
-    badge: "Serviços Jurídicos",
-    icon: Briefcase,
-    leadParagraph: "Garantimos segurança e representação jurídica robusta em negociações societárias, litígios complexos, penal econômico e atos notariais e cartorários.",
-    richContent: [
-      "O ambiente regulatório e tributário brasileiro é um dos mais complexos do mundo. Provemos assessoria de excelência técnica focada na estruturação societária societária de alta performance, reorganização tributária de ativos e defesas judiciais corporativas.",
-      "Nosso time de advogados associados atua no contencioso estratégico, elaborando pareceres irrefutáveis para defesas de executivos e empresas em inquéritos civis ou processos fiscais complexos."
-    ],
-    features: [
-      "Assessoria consultiva em reorganização tributária e planejamento fiscal",
-      "Defesa corporativa estratégica em direito penal econômico e societário",
-      "Elaboração de acordos societários, cisões, incorporações e due diligence M&A",
-      "Representação arbitral de alta complexidade em disputas contratuais",
-      "Atuação notarial e cartorária: lavratura de escrituras, procurações, autenticações e atos cartorários societários"
-    ],
-    sidebarInfo: {
-      title: "Segurança de Ativos",
-      description: "Pareceres consultivos preventivos emitidos por nosso time reduzem litígios tributários e passivos trabalhistas corporativos em até 75%.",
-      ctaLabel: "Falar com Advogado Associado"
-    },
-    media: {
-      src: "/assets/imagemChaveiro1.jpeg",
-      alt: "Close-up do chaveiro escudo GSR - Símbolo de proteção legal e segurança"
-    }
-  }
 };

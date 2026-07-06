@@ -106,9 +106,9 @@ export default function LandingPage() {
             <Badge variant="primary">{hero.badge}</Badge>
             
             <Heading level={1} className="font-normal tracking-tight text-balance text-gsr-text-primary">
-              Mitigação de Riscos,<br />
-              <span className="text-gsr-text-secondary">Compliance e</span><br />
-              Governança de Alto Nível
+              Riscos Identificados.<br />
+              <span className="text-gsr-text-secondary">Governança Fortalecida.</span><br />
+              Ativos Protegidos.
             </Heading>
             
             <Body variant="secondary" className="text-base md:text-lg leading-relaxed max-w-xl">

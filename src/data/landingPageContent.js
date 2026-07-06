@@ -1,4 +1,4 @@
-import { Shield, Scale, Settings, Search, FileText, Briefcase } from "lucide-react";
+import { Shield, Scale, Settings, Search, AlertTriangle, Briefcase } from "lucide-react";
 
 /**
  * Conteúdo estruturado para a Landing Page (One-Page) da GSR Company.
@@ -7,9 +7,9 @@ import { Shield, Scale, Settings, Search, FileText, Briefcase } from "lucide-rea
  */
 export const landingPageContent = {
   hero: {
-    badge: "Solidez & Inteligência Corporativa",
-    title: "Mitigação de Riscos, Compliance e Governança de Alto Nível",
-    description: "Assessoramos grandes corporações e conselhos de administração na tomada de decisões estratégicas de alta complexidade. Protegemos sua operação com auditoria independente, segurança de ativos e conformidade legal.",
+    badge: "Consultoria Estratégica de Alta Confiabilidade",
+    title: "Riscos Identificados. Governança Fortalecida. Ativos Protegidos.",
+    description: "Toda decisão estratégica carrega um risco que pode não estar mapeado. Identificamos vulnerabilidades antes que se tornem passivos, fortalecemos a governança da sua operação e garantimos conformidade total — para que conselhos e executivos decidam com segurança, não com intuição.",
     ctaPrimary: {
       label: "Agendar Reunião Segura",
       href: "#contato",
@@ -25,76 +25,76 @@ export const landingPageContent = {
     },
   },
   services: {
-    subtitle: "Nossas Competências",
-    title: "Soluções integradas sob sigilo absoluto",
-    description: "Estrutura ágil e de alta credibilidade para prover respostas precisas e documentadas sobre fraudes, passivos regulatórios e vulnerabilidades de ativos corporativos.",
+    subtitle: "Frentes de Proteção Corporativa",
+    title: "Para cada risco corporativo, uma resposta especializada",
+    description: "Fraudes não identificadas, passivos regulatórios e vulnerabilidades patrimoniais colocam sua operação em risco. Atuamos com agilidade e alta credibilidade para mapear, conter e resolver cada uma dessas frentes.",
     items: [
       {
         slug: "seguranca-empresarial",
-        title: "Segurança Empresarial",
-        description: "Análise tática de vulnerabilidades patrimoniais, planos integrados de segurança física, lógicas e proteção velada de lideranças corporativas.",
+        title: "Segurança Patrimonial e Empresarial",
+        description: "Vulnerabilidades patrimoniais e físicas expõem sua operação e seus executivos. Mapeamos riscos e estruturamos proteção integrada, da sede ao deslocamento de lideranças.",
         icon: Shield,
       },
       {
         slug: "compliance-regulatorio",
         title: "Compliance Regulatório",
-        description: "Implementação e revisão de programas de integridade corporativa, investigações internas contra suborno e adequação sistêmica à LGPD.",
+        description: "Não conformidade regulatória vira multa, processo e dano reputacional. Implementamos e revisamos programas de integridade que blindam sua empresa, incluindo adequação total à LGPD.",
         icon: Scale,
       },
       {
-        slug: "controladoria-governanca",
-        title: "Controladoria & Governança",
-        description: "Auditoria contábil especializada, análise de riscos fiscais e controles internos administrativos para conselhos de administração.",
+        slug: "governanca-corporativa",
+        title: "Governança Corporativa",
+        description: "Decisões societárias mal estruturadas geram conflitos e passivos futuros. Desenhamos a governança da sua empresa — de acordos a operações de M&A — com respaldo jurídico completo.",
         icon: Settings,
       },
       {
-        slug: "investigacoes-privadas",
-        title: "Investigações Privadas",
-        description: "Inteligência corporativa aplicada à identificação de vazamento de segredos industriais, espionagem concorrencial e desvio de conduta.",
+        slug: "gestao-riscos",
+        title: "Gestão de Riscos",
+        description: "Fornecedores não auditados e riscos fiscais não mapeados se tornam passivos caros. Identificamos, mensuramos e mitigamos cada risco antes que ele afete sua operação ou seu caixa.",
+        icon: AlertTriangle,
+      },
+      {
+        slug: "inteligencia-corporativa",
+        title: "Inteligência Corporativa",
+        description: "Vazamento de informações estratégicas e concorrência desleal corroem sua vantagem competitiva. Aplicamos inteligência corporativa para identificar e neutralizar essas ameaças sob sigilo absoluto.",
         icon: Search,
       },
       {
-        slug: "auditorias",
-        title: "Auditorias",
-        description: "Revisão imparcial de contratos comerciais de larga escala, validação de integridade de fornecedores e certificações de processos operacionais.",
-        icon: FileText,
-      },
-      {
-        slug: "servicos-juridicos",
-        title: "Serviços Jurídicos",
-        description: "Assessoria consultiva em direito tributário complexo, contencioso societário estratégico, defesa criminal econômica corporativa e atuação notarial e cartorária.",
+        slug: "outsource-management",
+        title: "Outsource Management",
+        description: "Internalizar toda função crítica nem sempre é viável — mas perder controle sobre ela também não pode ser opção. Assumimos a gestão de processos terceirizados com agilidade e indicadores mensuráveis.",
         icon: Briefcase,
       },
     ],
   },
   differentiators: {
-    subtitle: "Como Trabalhamos",
-    title: "Rigor corporativo, desde o primeiro dia",
-    description: "Somos uma operação nova, mas estruturada como uma corporação: processos documentados, equipe sênior e compliance nativo — sem fase de amadurecimento.",
+    subtitle: "Nosso Diferencial",
+    title: "Mais do que diagnóstico, parceria na implementação",
+    description: "A GSR Company nasceu para superar o modelo tradicional de consultoria: mais do que diagnósticos, somos parceiros estratégicos na implementação de soluções que fortalecem a governança, mitigam riscos e impulsionam a continuidade do seu negócio.",
     items: [
       {
-        id: "rigor-corporativo",
+        id: "parceria-implementacao",
         iconName: "ShieldCheck",
-        label: "Rigor Corporativo",
-        tag: "Rigor Corporativo",
-        title: "Rigor corporativo desde o primeiro dia",
-        description: "Seguimos os mesmos protocolos de documentação, controles internos e compliance que orientam grandes corporações — sem fase de amadurecimento.",
+        label: "Parceria na Implementação",
+        tag: "Parceria na Implementação",
+        title: "Diagnóstico é só o início — nós implementamos",
+        description: "Diferente do modelo tradicional de consultoria, não entregamos apenas relatórios. Atuamos como parceiros estratégicos até a solução estar implementada, com governança fortalecida e riscos efetivamente mitigados.",
       },
       {
-        id: "equipe-senior",
+        id: "modelo-integrado",
         iconName: "Award",
-        label: "Equipe Sênior",
-        tag: "Equipe Sênior",
-        title: "Equipe técnica sênior, não trainee",
-        description: "Nosso corpo técnico reúne profissionais com trajetória consolidada em auditoria, compliance, investigação e direito corporativo, atuando sob um modelo de governança estruturado desde a fundação.",
+        label: "Modelo Integrado",
+        tag: "Modelo Integrado",
+        title: "Consultoria, outsourcing e inteligência em uma só estrutura",
+        description: "Combinamos consultoria estratégica, gestão operacional especializada, inteligência corporativa e compliance regulatório em um único modelo — mais agilidade, mais controle e resultados mensuráveis, sem multiplicar fornecedores.",
       },
       {
-        id: "estrutura-agil",
+        id: "startup-consultorial",
         iconName: "Zap",
-        label: "Estrutura Ágil",
-        tag: "Estrutura Ágil",
-        title: "Estrutura ágil, sem burocracia herdada",
-        description: "Sem camadas de decisão de uma operação antiga: contato direto com quem executa, resposta rápida e escopo adaptado de verdade ao porte de cada cliente.",
+        label: "Startup Consultorial",
+        tag: "Startup Consultorial",
+        title: "Agilidade de startup, rigor de consultoria especializada",
+        description: "Unimos a solidez técnica de uma consultoria especializada à agilidade e à capacidade de adaptação de uma startup, antecipando tendências regulatórias com soluções dinâmicas, escaláveis e orientadas por dados.",
       },
     ],
   },
@@ -193,7 +193,7 @@ export const faq = {
   items: [
     {
       question: "Quais áreas a GSR atende?",
-      answer: "Segurança empresarial, compliance regulatório, controladoria e governança, investigações privadas, auditorias e serviços jurídicos (incluindo atos notariais e cartorários).",
+      answer: "Segurança patrimonial e empresarial, compliance regulatório, governança corporativa, gestão de riscos, inteligência corporativa e outsource management.",
     },
     {
       question: "Como funciona o primeiro contato?",
