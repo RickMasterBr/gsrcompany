@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import { Menu, X, ArrowUpRight, Shield, ChevronDown, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, ChevronDown, ArrowRight } from "lucide-react";
 
 /**
  * Sticky header with background blur, flexible SVG logo space, and editorial animated link underlines.
  */
 export function HeaderNav({
   logoText = "GSR Company",
-  logoIcon: LogoIcon = Shield,
+  logoIcon: LogoIcon = true,
   links = [
     { label: "Serviços", href: "#servicos" },
     { label: "Sobre Nós", href: "#sobre" },
@@ -57,7 +57,11 @@ export function HeaderNav({
         {/* Flexible Logo Container */}
         <a href="#" className="flex items-center gap-3 group">
           {LogoIcon ? (
-            <LogoIcon className="h-6 w-6 text-gsr-text-primary group-hover:text-gsr-gold transition-colors duration-300" />
+            <img
+              src="/assets/navbar-icon.png"
+              alt="GSR Company"
+              className="h-8 w-8 object-contain"
+            />
           ) : (
             <div className="h-7 w-7 rounded-sm border border-gsr-text-primary bg-gsr-surface flex items-center justify-center font-bold text-xs text-gsr-text-primary group-hover:border-gsr-gold group-hover:text-gsr-gold transition-colors duration-300">
               S

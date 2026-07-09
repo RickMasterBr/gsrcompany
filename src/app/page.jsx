@@ -251,8 +251,8 @@ export default function LandingPage() {
 
           <DifferentiatorsTabs
             items={differentiators.items}
-            mediaSrc={hero.video.src}
-            mediaPoster={hero.video.poster}
+            mediaSrc="/assets/diferenciais-video.mp4"
+            mediaPoster="/assets/imagemChaveiro2.jpeg"
             className="mt-12"
           />
 

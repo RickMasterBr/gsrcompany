@@ -1,1 +1,1 @@
-export const COMPANY_EMAIL = "contato@gsrcompany.com.br";
+export const COMPANY_EMAIL = "gabrielsenra@gsrnc.com.br";

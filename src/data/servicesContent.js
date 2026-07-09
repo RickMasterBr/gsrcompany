@@ -28,8 +28,8 @@ export const servicesContent = {
       ctaLabel: "Solicitar Plano de Risco"
     },
     media: {
-      src: "/assets/imagemChaveiro2.jpeg",
-      alt: "Variante escura do escudo de proteção GSR Company - Segurança Empresarial"
+      src: "/assets/servico-seguranca-empresarial.jpeg",
+      alt: "Cadeado corporativo representando proteção patrimonial e segurança empresarial - GSR Company"
     }
   },
   "compliance-regulatorio": {
@@ -55,8 +55,8 @@ export const servicesContent = {
       ctaLabel: "Solicitar Diagnóstico de Conformidade"
     },
     media: {
-      src: "/assets/imagemChaveiro1.jpeg",
-      alt: "Variante do chaveiro GSR Company focado em compliance e conformidade"
+      src: "/assets/servico-compliance-regulatorio.jpeg",
+      alt: "Balança da justiça simbolizando conformidade regulatória e compliance corporativo - GSR Company"
     }
   },
   "governanca-corporativa": {
@@ -82,8 +82,8 @@ export const servicesContent = {
       ctaLabel: "Solicitar Diagnóstico de Governança"
     },
     media: {
-      src: "/assets/imagemChaveiro2.jpeg",
-      alt: "Close-up do escudo GSR Company - Símbolo de governança corporativa"
+      src: "/assets/servico-governanca-corporativa.jpeg",
+      alt: "Engrenagem corporativa representando estrutura de governança e processos decisórios - GSR Company"
     }
   },
   "gestao-riscos": {
@@ -109,8 +109,8 @@ export const servicesContent = {
       ctaLabel: "Solicitar Matriz de Riscos"
     },
     media: {
-      src: "/assets/imagemChaveiro1.jpeg",
-      alt: "Render do chaveiro GSR Company - Gestão de Riscos"
+      src: "/assets/servico-gestao-riscos.jpeg",
+      alt: "Triângulo de alerta sinalizando mapeamento e mitigação de riscos corporativos - GSR Company"
     }
   },
   "inteligencia-corporativa": {
@@ -136,8 +136,8 @@ export const servicesContent = {
       ctaLabel: "Iniciar Canal Investigativo"
     },
     media: {
-      src: "/assets/imagemChaveiro1.jpeg",
-      alt: "Close-up do chaveiro GSR Company de ângulo superior - Inteligência Corporativa"
+      src: "/assets/servico-inteligencia-corporativa.jpeg",
+      alt: "Lupa sobre dados corporativos representando inteligência e investigação privada - GSR Company"
     }
   },
   "outsource-management": {
@@ -163,8 +163,8 @@ export const servicesContent = {
       ctaLabel: "Solicitar Proposta de Gestão"
     },
     media: {
-      src: "/assets/imagemChaveiro2.jpeg",
-      alt: "Render do chaveiro GSR Company - Outsource Management"
+      src: "/assets/servico-outsource-management.jpeg",
+      alt: "Maleta executiva representando gestão operacional terceirizada e outsource management - GSR Company"
     }
   },
 };

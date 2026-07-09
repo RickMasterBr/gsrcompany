@@ -8,8 +8,8 @@ const geist = Geist({
 });
 
 export const metadata = {
-  title: "GSR Company — Design System Mestre",
-  description: "Biblioteca de componentes de UI e documentação oficial dos tokens locais da GSR Company.",
+  title: "GSR Company — Consultoria Estratégica de Alta Confiabilidade",
+  description: "Segurança patrimonial e empresarial, compliance regulatório, governança corporativa, gestão de riscos, inteligência corporativa e outsource management. Identificamos riscos antes que se tornem passivos.",
 };
 
 export default function RootLayout({ children }) {

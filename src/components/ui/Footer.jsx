@@ -1,5 +1,5 @@
 import React from "react";
-import { Shield, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { Shield, Mail, MapPin, MessageCircle } from "lucide-react";
 import { COMPANY_EMAIL } from "@/data/siteConfig";
 
 const WHATSAPP_NUMBER = "+55 21 97451-6547"; // TODO: substituir pelo número real antes de publicar
@@ -12,7 +12,6 @@ export function Footer({
   logoIcon: LogoIcon = Shield,
   cnpj = "CNPJ: 00.000.000/0001-00",
   address = "Av. Dr. Manoel Teles, 77 - Centro, Duque de Caxias - RJ, 25010-090",
-  phone = "+55 (11) 3200-4000",
   email = COMPANY_EMAIL,
   links = [
     { label: "Serviços", href: "#servicos" },
@@ -75,10 +74,6 @@ export function Footer({
             <li className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-gsr-gold shrink-0" />
               <span>{email}</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <Phone className="h-4 w-4 text-gsr-gold shrink-0" />
-              <span>{phone}</span>
             </li>
             <li className="flex items-center gap-2">
               <MessageCircle className="h-4 w-4 text-gsr-gold shrink-0" />
