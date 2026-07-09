@@ -31,6 +31,7 @@ export function ContactForm({
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -55,24 +56,33 @@ export function ContactForm({
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
 
     setLoading(true);
-    // Simulating API call
-    setTimeout(() => {
-      setLoading(false);
-      setSuccess(true);
-      setFormData({
-        nome: "",
-        email: "",
-        telefone: "",
-        servico: "",
-        mensagem: "",
-        lgpd: false,
+    setSubmitError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-    }, 2000);
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Erro desconhecido");
+      }
+
+      setSuccess(true);
+      setFormData({ nome: "", email: "", telefone: "", servico: "", mensagem: "", lgpd: false });
+    } catch {
+      setSubmitError("Não foi possível enviar sua mensagem. Tente novamente ou use o WhatsApp/e-mail do rodapé.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (success) {
@@ -194,6 +204,11 @@ export function ContactForm({
             <p className="text-xs font-medium text-rose-500 mt-2">{errors.lgpd}</p>
           )}
         </div>
+
+        {/* Submit error */}
+        {submitError && (
+          <p className="text-sm font-medium text-rose-500 text-center">{submitError}</p>
+        )}
 
         {/* Submit */}
         <Button
