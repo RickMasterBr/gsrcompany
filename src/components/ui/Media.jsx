@@ -60,7 +60,7 @@ export function ShieldVideo({
           loop
           muted
           playsInline
-          className="w-full h-full object-cover object-[25%_50%] mix-blend-multiply opacity-90 transition-opacity duration-500 hover:opacity-100"
+          className="w-full h-full object-cover object-[35%_50%] mix-blend-multiply opacity-90 transition-opacity duration-500 hover:opacity-100"
         />
       ) : (
         <div className="w-full h-full flex flex-col items-center justify-center text-gsr-text-secondary/50 font-sans p-6 text-center">

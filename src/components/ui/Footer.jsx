@@ -1,17 +1,13 @@
 import React from "react";
-import { Shield, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Mail, MapPin, MessageCircle } from "lucide-react";
 import { COMPANY_EMAIL } from "@/data/siteConfig";
 
-const WHATSAPP_NUMBER = "+55 21 97451-6547"; // TODO: substituir pelo número real antes de publicar
+const WHATSAPP_NUMBER = "+55 21 97451-6547";
 
-/**
- * Premium corporate footer for GSR Company.
- */
 export function Footer({
   logoText = "GSR Company",
-  logoIcon: LogoIcon = Shield,
   cnpj = "CNPJ: 00.000.000/0001-00",
-  address = "Av. Dr. Manoel Teles, 77 - Centro, Duque de Caxias - RJ, 25010-090",
+  address = "Av. Pres. Antônio Carlos, 58 – 11° andar, Centro, Rio de Janeiro – RJ, CEP: 20020-010",
   email = COMPANY_EMAIL,
   links = [
     { label: "Serviços", href: "#servicos" },
@@ -26,7 +22,7 @@ export function Footer({
 
   return (
     <footer
-      className={`border-t border-gsr-border bg-gsr-surface/50 w-full py-16 px-6 ${className}`}
+      className={`bg-neutral-800 w-full py-16 px-6 ${className}`}
       {...props}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10">
@@ -34,22 +30,22 @@ export function Footer({
         {/* Logo & Info column */}
         <div className="md:col-span-5 space-y-4">
           <div className="flex items-center gap-2.5">
-            {LogoIcon && <LogoIcon className="h-5 w-5 text-gsr-gold" />}
-            <span className="font-title text-lg text-gsr-text-primary tracking-wide">
+            <img src="/assets/navbar-icon.png" alt="GSR Company" className="h-8 w-8 object-contain brightness-0 invert" />
+            <span className="font-title text-lg text-white tracking-wide">
               {logoText}
             </span>
           </div>
-          <p className="font-sans text-xs text-gsr-text-secondary leading-relaxed max-w-sm">
+          <p className="font-sans text-xs text-neutral-400 leading-relaxed max-w-sm">
             Solidez, inteligência preventiva e governança de riscos para grandes corporações. Assessoria jurídica societária e investigações estratégicas de conformidade.
           </p>
-          <span className="block font-mono text-[10px] text-gsr-text-secondary/60">
+          <span className="block font-mono text-[10px] text-neutral-500">
             {cnpj}
           </span>
         </div>
 
         {/* Links column */}
         <div className="md:col-span-3 space-y-3">
-          <h4 className="font-sans text-xs font-semibold uppercase tracking-wider text-gsr-text-primary">
+          <h4 className="font-sans text-xs font-semibold uppercase tracking-wider text-white">
             Navegação
           </h4>
           <nav className="flex flex-col gap-2">
@@ -57,7 +53,7 @@ export function Footer({
               <a
                 key={idx}
                 href={link.href}
-                className="font-sans text-xs text-gsr-text-secondary hover:text-gsr-gold transition-colors duration-200 w-fit"
+                className="font-sans text-xs text-neutral-400 hover:text-gsr-gold transition-colors duration-200 w-fit"
               >
                 {link.label}
               </a>
@@ -67,13 +63,17 @@ export function Footer({
 
         {/* Contact info column */}
         <div className="md:col-span-4 space-y-3">
-          <h4 className="font-sans text-xs font-semibold uppercase tracking-wider text-gsr-text-primary">
+          <h4 className="font-sans text-xs font-semibold uppercase tracking-wider text-white">
             Canais Seguros
           </h4>
-          <ul className="flex flex-col gap-2 font-sans text-xs text-gsr-text-secondary">
+          <ul className="flex flex-col gap-2 font-sans text-xs text-neutral-400">
             <li className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-gsr-gold shrink-0" />
               <span>{email}</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <Mail className="h-4 w-4 text-gsr-gold shrink-0" />
+              <span>gsrcompanync@gmail.com</span>
             </li>
             <li className="flex items-center gap-2">
               <MessageCircle className="h-4 w-4 text-gsr-gold shrink-0" />
@@ -96,11 +96,11 @@ export function Footer({
       </div>
 
       {/* Copyright line */}
-      <div className="max-w-7xl mx-auto border-t border-gsr-border/60 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-xs text-gsr-text-secondary/70 font-sans">
+      <div className="max-w-7xl mx-auto border-t border-neutral-700 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p className="text-xs text-neutral-500 font-sans">
           © {new Date().getFullYear()} {logoText}. Todos os direitos reservados.
         </p>
-        <div className="flex gap-6 text-xs text-gsr-text-secondary/70">
+        <div className="flex gap-6 text-xs text-neutral-500">
           <a href="#" className="hover:text-gsr-gold transition-colors duration-200">
             Política de Privacidade
           </a>

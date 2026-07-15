@@ -5,10 +5,10 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const SERVICE_LABELS = {
   "seguranca-empresarial": "Segurança Patrimonial e Empresarial",
   "compliance-regulatorio": "Compliance Regulatório",
-  "governanca-corporativa": "Governança Corporativa",
+  "governanca-corporativa": "Controladoria e Governança",
   "gestao-riscos": "Gestão de Riscos",
   "inteligencia-corporativa": "Inteligência Corporativa",
-  "outsource-management": "Outsource Management",
+  "outsource-management": "Serviços Jurídicos Notariais e Cartoriais",
 };
 
 export async function POST(request) {

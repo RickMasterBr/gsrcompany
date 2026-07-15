@@ -12,7 +12,7 @@ import { Heading, Body } from "./Typography";
 export function ContactForm({
   title,
   description,
-  buttonLabel = "Enviar Solicitação Segura",
+  buttonLabel = "Enviar Mensagem",
   lgpdLabel = "Consentimento LGPD",
   lgpdDescription = "Declaro ciente de que as informações serão tratadas sob estrito sigilo corporativo.",
   className = "",
@@ -136,7 +136,7 @@ export function ContactForm({
 
           {/* Email */}
           <TextField
-            label="E-mail Corporativo"
+            label="E-mail de Contato"
             placeholder="exemplo@empresa.com"
             value={formData.email}
             onChange={(e) => handleChange("email", e.target.value)}
@@ -170,10 +170,10 @@ export function ContactForm({
             <option value="">Selecione uma área de atuação...</option>
             <option value="seguranca-empresarial">Segurança Patrimonial e Empresarial</option>
             <option value="compliance-regulatorio">Compliance Regulatório</option>
-            <option value="governanca-corporativa">Governança Corporativa</option>
-            <option value="gestao-riscos">Gestão de Riscos</option>
-            <option value="inteligencia-corporativa">Inteligência Corporativa</option>
-            <option value="outsource-management">Outsource Management</option>
+            <option value="governanca-corporativa">Controladoria e Governança</option>
+            <option value="gestao-riscos">Auditorias Financeiras</option>
+            <option value="inteligencia-corporativa">Investigações de Riscos e Fraudes</option>
+            <option value="outsource-management">Serviços Jurídicos Notariais e Cartoriais</option>
           </select>
           {errors.servico && (
             <p className="text-xs font-medium text-rose-500 mt-0.5">{errors.servico}</p>

@@ -61,9 +61,9 @@ export const servicesContent = {
   },
   "governanca-corporativa": {
     slug: "governanca-corporativa",
-    title: "Governança Corporativa e Estruturação Societária",
+    title: "Controladoria e Governança e Estruturação Societária",
     subtitle: "Estruturas de decisão sólidas e segurança jurídica para o crescimento da empresa",
-    badge: "Governança Corporativa",
+    badge: "Controladoria e Governança",
     icon: Settings,
     leadParagraph: "Apoiamos conselhos de administração na estruturação de processos decisórios, acordos societários e operações de M&A, com respaldo jurídico completo, incluindo atuação notarial e cartorária.",
     richContent: [
@@ -83,12 +83,12 @@ export const servicesContent = {
     },
     media: {
       src: "/assets/servico-governanca-corporativa.jpeg",
-      alt: "Engrenagem corporativa representando estrutura de governança e processos decisórios - GSR Company"
+      alt: "Engrenagem corporativa representando controladoria, governança e processos decisórios - GSR Company"
     }
   },
   "gestao-riscos": {
     slug: "gestao-riscos",
-    title: "Gestão de Riscos e Auditoria de Terceiros",
+    title: "Auditorias Financeiras e Gestão de Riscos",
     subtitle: "Identificação, mensuração e mitigação de riscos fiscais, operacionais e de fornecedores",
     badge: "Gestão de Riscos",
     icon: AlertTriangle,
@@ -115,7 +115,7 @@ export const servicesContent = {
   },
   "inteligencia-corporativa": {
     slug: "inteligencia-corporativa",
-    title: "Inteligência Corporativa e Investigações Privadas",
+    title: "Investigações de Riscos e Fraudes",
     subtitle: "Elucidação científica de desvios, vazamentos e espionagem industrial",
     badge: "Inteligência Corporativa",
     icon: Search,
@@ -142,29 +142,29 @@ export const servicesContent = {
   },
   "outsource-management": {
     slug: "outsource-management",
-    title: "Outsource Management",
-    subtitle: "Gestão operacional especializada de processos críticos terceirizados",
-    badge: "Outsource Management",
+    title: "Serviços Jurídicos Notariais e Cartoriais",
+    subtitle: "Suporte técnico em demandas documentais, contratuais, registrais e administrativas",
+    badge: "Serviços Jurídicos Notariais e Cartoriais",
     icon: Briefcase,
-    leadParagraph: "Assumimos a gestão de processos operacionais críticos da sua empresa, com controle, agilidade e indicadores mensuráveis — sem que você precise estruturar uma equipe interna do zero.",
+    leadParagraph: "Suporte técnico a empresas e pessoas físicas na condução de demandas documentais, contratuais, registrais e administrativas, com foco em agilidade, segurança jurídica e conformidade legal.",
     richContent: [
-      "Nem toda função crítica precisa ser internalizada para ser bem gerida. Estruturamos a operação terceirizada de processos específicos — administrativos, de compliance ou de controle — com a mesma exigência técnica de uma equipe própria, mas com a agilidade de um modelo enxuto.",
-      "Cada operação é acompanhada por indicadores de performance claros, relatórios periódicos e um ponto de contato direto, eliminando a camada de burocracia comum em modelos tradicionais de terceirização."
+      "Este serviço abrange o acompanhamento de procedimentos em cartórios, elaboração e análise de documentos, autenticações, reconhecimentos, registros, certidões, regularizações e apoio técnico em rotinas jurídicas extrajudiciais.",
+      "Ao externalizar essas rotinas para uma equipe especializada, empresas e pessoas físicas ganham maior eficiência operacional, reduzem riscos de erros documentais e garantem que cada procedimento seja conduzido com segurança jurídica e conformidade legal."
     ],
     features: [
-      "Gestão operacional terceirizada de processos administrativos e de compliance",
-      "Indicadores de performance (KPIs) e relatórios periódicos de acompanhamento",
-      "Estrutura escalável, ajustada ao porte e à necessidade de cada cliente",
-      "Ponto de contato direto, sem camadas de decisão de modelos tradicionais"
+      "Acompanhamento de procedimentos em cartórios e registros públicos",
+      "Elaboração, análise e revisão de documentos contratuais e administrativos",
+      "Autenticações, reconhecimentos de firma, certidões e regularizações",
+      "Apoio técnico em rotinas jurídicas extrajudiciais para empresas e pessoas físicas"
     ],
     sidebarInfo: {
-      title: "Eficiência Mensurável",
-      description: "Modelos de outsource bem estruturados reduzem custos operacionais fixos e aumentam a velocidade de resposta a demandas críticas, sem abrir mão de controle e conformidade.",
-      ctaLabel: "Solicitar Proposta de Gestão"
+      title: "Segurança Jurídica e Eficiência",
+      description: "A condução especializada de demandas documentais e cartoriais reduz riscos de erros, retrabalho e passivos administrativos, garantindo conformidade em cada etapa do processo.",
+      ctaLabel: "Solicitar Suporte Documental"
     },
     media: {
       src: "/assets/servico-outsource-management.jpeg",
-      alt: "Maleta executiva representando gestão operacional terceirizada e outsource management - GSR Company"
+      alt: "Documentos e selos cartoriais representando serviços jurídicos notariais e cartorais - GSR Company"
     }
   },
 };

@@ -49,7 +49,7 @@ export function HeaderNav({
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full border-b border-gsr-border bg-gsr-bg/85 backdrop-blur-md transition-all duration-300 ${className}`}
+      className={`sticky top-0 z-50 w-full border-b border-neutral-700 bg-neutral-800 backdrop-blur-md transition-all duration-300 ${className}`}
       {...props}
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -60,14 +60,14 @@ export function HeaderNav({
             <img
               src="/assets/navbar-icon.png"
               alt="GSR Company"
-              className="h-8 w-8 object-contain"
+              className="h-8 w-8 object-contain brightness-0 invert"
             />
           ) : (
             <div className="h-7 w-7 rounded-sm border border-gsr-text-primary bg-gsr-surface flex items-center justify-center font-bold text-xs text-gsr-text-primary group-hover:border-gsr-gold group-hover:text-gsr-gold transition-colors duration-300">
               S
             </div>
           )}
-          <span className="font-title text-lg tracking-wide text-gsr-text-primary group-hover:text-gsr-gold-dark transition-colors duration-300">
+          <span className="font-title text-lg tracking-wide text-white group-hover:text-gsr-gold transition-colors duration-300">
             {logoText}
           </span>
         </a>
@@ -86,7 +86,7 @@ export function HeaderNav({
                   <button
                     type="button"
                     aria-expanded={openDropdown === idx}
-                    className="flex items-center gap-1 font-sans text-xs font-semibold uppercase tracking-wider text-gsr-text-primary hover:text-gsr-gold transition-colors duration-300 cursor-pointer"
+                    className="flex items-center gap-1 font-sans text-xs font-semibold uppercase tracking-wider text-neutral-300 hover:text-gsr-gold transition-colors duration-300 cursor-pointer"
                   >
                     {link.label}
                     <ChevronDown
@@ -153,7 +153,7 @@ export function HeaderNav({
                 key={idx}
                 href={link.href}
                 onClick={(e) => handleAnchorClick(e, link.href)}
-                className="font-sans text-xs font-semibold uppercase tracking-wider text-gsr-text-primary hover:text-gsr-gold transition-colors duration-300 editorial-link"
+                className="font-sans text-xs font-semibold uppercase tracking-wider text-neutral-300 hover:text-gsr-gold transition-colors duration-300 editorial-link"
               >
                 {link.label}
               </a>
@@ -165,7 +165,7 @@ export function HeaderNav({
         <div className="hidden md:flex items-center">
           <button
             onClick={onCtaClick}
-            className="inline-flex items-center justify-center font-sans text-xs font-semibold uppercase tracking-wider border border-gsr-text-primary hover:border-gsr-gold hover:text-gsr-gold text-gsr-text-primary bg-transparent rounded-gsr px-5 py-2.5 transition-all duration-300 cursor-pointer"
+            className="inline-flex items-center justify-center font-sans text-xs font-semibold uppercase tracking-wider border border-white hover:border-gsr-gold hover:bg-gsr-gold hover:text-white text-neutral-900 bg-white rounded-gsr px-5 py-2.5 transition-all duration-300 cursor-pointer"
           >
             {ctaLabel}
           </button>
@@ -174,7 +174,7 @@ export function HeaderNav({
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-gsr-text-primary hover:text-gsr-gold transition-colors duration-200 cursor-pointer"
+          className="md:hidden p-2 text-neutral-300 hover:text-gsr-gold transition-colors duration-200 cursor-pointer"
           aria-label="Toggle Menu"
         >
           {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -184,14 +184,14 @@ export function HeaderNav({
 
       {/* Mobile Drawer (Demonstration) */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-gsr-bg border-b border-gsr-border px-6 py-8 flex flex-col gap-6 animate-fade-up-blur shadow-gsr-lg">
+        <div className="md:hidden absolute top-20 left-0 w-full bg-neutral-800 border-b border-neutral-700 px-6 py-8 flex flex-col gap-6 animate-fade-up-blur shadow-gsr-lg">
           <nav className="flex flex-col gap-5">
             {links.map((link, idx) => (
               <a
                 key={idx}
                 href={link.href}
                 onClick={(e) => { handleAnchorClick(e, link.href); setMobileMenuOpen(false); }}
-                className="font-sans text-sm font-semibold uppercase tracking-wider text-gsr-text-primary hover:text-gsr-gold transition-colors duration-200"
+                className="font-sans text-sm font-semibold uppercase tracking-wider text-neutral-300 hover:text-gsr-gold transition-colors duration-200"
               >
                 {link.label}
               </a>

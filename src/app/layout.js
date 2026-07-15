@@ -9,7 +9,7 @@ const geist = Geist({
 
 export const metadata = {
   title: "GSR Company — Consultoria Estratégica de Alta Confiabilidade",
-  description: "Segurança patrimonial e empresarial, compliance regulatório, governança corporativa, gestão de riscos, inteligência corporativa e outsource management. Identificamos riscos antes que se tornem passivos.",
+  description: "Segurança patrimonial e empresarial, compliance regulatório, controladoria e governança, auditorias financeiras, investigações de riscos e fraudes e serviços jurídicos notariais e cartoriais. Identificamos riscos antes que se tornem passivos.",
 };
 
 export default function RootLayout({ children }) {
