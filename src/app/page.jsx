@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { ArrowRight, X, CheckCircle2, Mail } from "lucide-react";
 
 // Import Content Data
@@ -13,7 +13,7 @@ import { Heading, Body, Caption } from "@/components/ui/Typography";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { HeaderNav } from "@/components/ui/Navigation";
-import { ShieldVideo } from "@/components/ui/Media";
+import { HeroMedia } from "@/components/ui/HeroMedia";
 import { ServicesCarousel } from "@/components/ui/ServicesCarousel";
 import { PillarsContainer } from "@/components/ui/PillarsContainer";
 import { DifferentiatorsTabs } from "@/components/ui/DifferentiatorsTabs";
@@ -28,18 +28,6 @@ export default function LandingPage() {
   const [expandedSlug, setExpandedSlug] = useState(null);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const closeTimeoutRef = useRef(null);
-
-  // Hero background video only runs on desktop (lg:+); mobile/tablet gets the static poster
-  // to avoid autoplay cost and the framing artifacts that only ever showed up on small screens.
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 1024px)");
-    const updateIsDesktop = () => setIsDesktop(mediaQuery.matches);
-    updateIsDesktop();
-    mediaQuery.addEventListener("change", updateIsDesktop);
-    return () => mediaQuery.removeEventListener("change", updateIsDesktop);
-  }, []);
 
   const openServiceCard = (slug) => {
     if (closeTimeoutRef.current) {
@@ -101,14 +89,11 @@ export default function LandingPage() {
         {/* Video Background — desktop only (lg:+). Mobile/tablet skips it entirely: no autoplay,
             no decode cost, and no risk of the framing/contrast issues that only ever showed up there. */}
         <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-          {isDesktop && (
-            <ShieldVideo
-              variant="background"
-              src={hero.video.src}
-              poster={hero.video.poster}
-              className="w-full h-full object-cover object-[75%_50%] scale-125 opacity-85"
-            />
-          )}
+          <HeroMedia
+            src={hero.video.src}
+            poster={hero.video.poster}
+            className="w-full h-full object-cover object-[75%_50%] scale-125 opacity-85"
+          />
           {/* Blend background to white: full wash on mobile/tablet where text spans the full width, left-side gradient once the two-column layout kicks in at lg: */}
           <div className="absolute inset-0 bg-white/80 lg:bg-gradient-to-r lg:from-white lg:via-white/80 lg:to-transparent z-10" />
         </div>
