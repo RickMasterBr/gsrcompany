@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ArrowRight, X, CheckCircle2, Mail } from "lucide-react";
 
 // Import Content Data
@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { HeaderNav } from "@/components/ui/Navigation";
 import { ShieldVideo } from "@/components/ui/Media";
-import { ServiceCard } from "@/components/ui/Card";
+import { ServicesCarousel } from "@/components/ui/ServicesCarousel";
 import { PillarsContainer } from "@/components/ui/PillarsContainer";
 import { DifferentiatorsTabs } from "@/components/ui/DifferentiatorsTabs";
 import { ProcessSlider } from "@/components/ui/ProcessSlider";
@@ -28,6 +28,18 @@ export default function LandingPage() {
   const [expandedSlug, setExpandedSlug] = useState(null);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const closeTimeoutRef = useRef(null);
+
+  // Hero background video only runs on desktop (lg:+); mobile/tablet gets the static poster
+  // to avoid autoplay cost and the framing artifacts that only ever showed up on small screens.
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    const updateIsDesktop = () => setIsDesktop(mediaQuery.matches);
+    updateIsDesktop();
+    mediaQuery.addEventListener("change", updateIsDesktop);
+    return () => mediaQuery.removeEventListener("change", updateIsDesktop);
+  }, []);
 
   const openServiceCard = (slug) => {
     if (closeTimeoutRef.current) {
@@ -86,17 +98,19 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section className="relative mx-6 my-8 overflow-hidden rounded-card border border-gsr-border bg-white shadow-gsr-md">
         
-        {/* Video Background */}
+        {/* Video Background — desktop only (lg:+). Mobile/tablet skips it entirely: no autoplay,
+            no decode cost, and no risk of the framing/contrast issues that only ever showed up there. */}
         <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-          <ShieldVideo
-            variant="background"
-            src={hero.video.src}
-            poster={hero.video.poster}
-            className="w-full h-full object-cover opacity-85"
-            style={{ transform: "scale(1.2) translateX(12%)" }}
-          />
-          {/* Subtle gradient overlay to blend video background to white on the left side */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
+          {isDesktop && (
+            <ShieldVideo
+              variant="background"
+              src={hero.video.src}
+              poster={hero.video.poster}
+              className="w-full h-full object-cover object-[75%_50%] scale-125 opacity-85"
+            />
+          )}
+          {/* Blend background to white: full wash on mobile/tablet where text spans the full width, left-side gradient once the two-column layout kicks in at lg: */}
+          <div className="absolute inset-0 bg-white/80 lg:bg-gradient-to-r lg:from-white lg:via-white/80 lg:to-transparent z-10" />
         </div>
 
         {/* Hero Content Overlay */}
@@ -159,20 +173,7 @@ export default function LandingPage() {
 
           {/* Services Grid */}
           <div className="relative">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.items.map((service, idx) => (
-                <ServiceCard
-                  key={service.slug}
-                  title={service.title}
-                  description={service.description}
-                  icon={service.icon}
-                  linkText="Detalhes da Atuação"
-                  onClick={() => openServiceCard(service.slug)}
-                  className="animate-fade-up-blur"
-                  style={{ animationDelay: `${idx * 100}ms` }}
-                />
-              ))}
-            </div>
+            <ServicesCarousel items={services.items} onSelect={openServiceCard} />
 
             {expandedSlug && (() => {
               const activeService = services.items.find((s) => s.slug === expandedSlug);

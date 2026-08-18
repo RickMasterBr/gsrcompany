@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { Badge } from "./Badge";
 import { Heading, Body } from "./Typography";
+import { Button } from "./Button";
 
 export function ProcessSlider({ subtitle, title, description, items = [], onCtaClick, className = "" }) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -82,7 +83,7 @@ export function ProcessSlider({ subtitle, title, description, items = [], onCtaC
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        <div className="relative aspect-video">
+        <div className="relative aspect-[4/3] md:aspect-video">
           <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
               key={currentSlide}
@@ -102,15 +103,18 @@ export function ProcessSlider({ subtitle, title, description, items = [], onCtaC
                 />
               </motion.div>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
+              <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
 
+              {/* Text overlay on the media — desktop/tablet only. On mobile the media box is too short
+                  for badge + title + description + button to fit without being clipped, so mobile gets
+                  its own text block below the media instead (see the md:hidden block further down). */}
               <motion.div
                 variants={textVariants}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="absolute bottom-0 left-0 right-0 p-6 md:p-10 lg:p-14"
+                className="hidden md:block absolute bottom-0 left-0 right-0 p-6 md:p-10 lg:p-14"
               >
                 <span className="inline-block text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-gsr-gold-light mb-2 md:mb-3">
                   {activeSlide.subtitle}
@@ -149,7 +153,7 @@ export function ProcessSlider({ subtitle, title, description, items = [], onCtaC
             <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
           </button>
 
-          <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 md:gap-3">
+          <div className="hidden md:flex absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 items-center gap-2 md:gap-3">
             {items.map((_, index) => (
               <button
                 key={index}
@@ -165,6 +169,46 @@ export function ProcessSlider({ subtitle, title, description, items = [], onCtaC
                   transition={{ duration: 0.3 }}
                 />
               </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile text block — sits below the media in normal flow so it can never be clipped */}
+        <div className="md:hidden bg-white p-6">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.25 }}
+            >
+              <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-gsr-gold-dark mb-2">
+                {activeSlide.subtitle}
+              </span>
+              <h3 className="font-title text-xl text-gsr-text-primary mb-2 tracking-tight font-normal">
+                {activeSlide.title}
+              </h3>
+              <p className="font-sans text-sm text-gsr-text-secondary leading-relaxed">
+                {activeSlide.description}
+              </p>
+            </motion.div>
+          </AnimatePresence>
+
+          <Button variant="filled" size="sm" icon={ArrowRight} onClick={onCtaClick} className="mt-4">
+            Saiba Mais
+          </Button>
+
+          <div className="flex items-center justify-center gap-2 mt-5">
+            {items.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                aria-label={`Ir para o slide ${index + 1}`}
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  index === currentSlide ? "w-6 bg-gsr-gold" : "w-1.5 bg-gsr-border"
+                }`}
+              />
             ))}
           </div>
         </div>

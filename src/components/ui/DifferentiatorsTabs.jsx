@@ -25,7 +25,7 @@ export function DifferentiatorsTabs({ items = [], mediaSrc, mediaPoster, classNa
   return (
     <div className={className}>
       {/* Navegação em pílula */}
-      <div className="bg-gsr-surface rounded-full w-full p-2 flex flex-col sm:flex-row gap-2 relative">
+      <div className="bg-gsr-surface rounded-card sm:rounded-full w-full p-2 flex flex-col sm:flex-row gap-2 relative">
         <div
           className="hidden sm:block absolute top-2 bottom-2 bg-white border border-gsr-border rounded-full shadow-gsr-sm transition-all duration-300 ease-out pointer-events-none"
           style={indicatorStyle}
