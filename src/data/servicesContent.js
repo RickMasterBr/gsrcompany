@@ -7,7 +7,7 @@ import { Shield, Scale, Settings, Search, AlertTriangle, Briefcase } from "lucid
 export const servicesContent = {
   "seguranca-empresarial": {
     slug: "seguranca-empresarial",
-    title: "Segurança Patrimonial e Empresarial e Inteligência Preventiva",
+    title: "Segurança Patrimonial, Empresarial e Inteligência Preventiva",
     subtitle: "Proteção estratégica de ativos físicos, digitais e humanos",
     badge: "Segurança Corporativa",
     icon: Shield,
@@ -19,12 +19,12 @@ export const servicesContent = {
     features: [
       "Diagnóstico integrado de vulnerabilidades patrimoniais",
       "Planos diretores de evasão segura e gerenciamento de crises",
-      "Varredura técnica passiva e proteção de salas de conselho",
+      "Varredura técnica e ambiental",
       "Treinamento tático de tomada de decisão para comitês executivos"
     ],
     sidebarInfo: {
-      title: "Impacto Financeiro",
-      description: "Estudos indicam que investimentos dirigidos à segurança tática preventiva reduzem incidentes graves em até 84% no primeiro ano fiscal.",
+      title: "Protegendo negócios, pessoas e reputações",
+      description: "A segurança empresarial moderna contribui para a continuidade dos negócios, fortalece a confiança institucional e apoia o desenvolvimento sustentável das organizações.",
       ctaLabel: "Solicitar Plano de Risco"
     },
     media: {
@@ -34,14 +34,14 @@ export const servicesContent = {
   },
   "compliance-regulatorio": {
     slug: "compliance-regulatorio",
-    title: "Compliance Regulatório e Prevenção a Fraudes",
+    title: "Compliance Regulatório e Branding",
     subtitle: "Conformidade sistêmica com leis nacionais e acordos internacionais",
     badge: "Compliance & Integridade",
     icon: Scale,
     leadParagraph: "Protegemos a reputação da sua marca estruturando programas de conformidade anticorrupção, adequação à LGPD e auditorias de integridade.",
     richContent: [
       "Programas de compliance eficientes evitam passivos bilionários e multas regulatórias pesadas. Apoiamos a formulação de Códigos de Conduta e canais seguros de denúncia anônima com tratamento metodológico rigoroso.",
-      "Nossos juristas realizam due diligence abrangente em processos de fusões, aquisições e parcerias comerciais internacionais (Anti-Bribery and Anti-Corruption laws), garantindo que sua marca permaneça ilibada."
+      "Nossos especialistas realizam due diligence abrangente em processos de fusões, aquisições e parcerias comerciais internacionais (Anti-Bribery and Anti-Corruption laws), garantindo que sua marca permaneça ilibada."
     ],
     features: [
       "Modelagem e revisão de Programas de Integridade Corporativa",
@@ -61,11 +61,11 @@ export const servicesContent = {
   },
   "governanca-corporativa": {
     slug: "governanca-corporativa",
-    title: "Controladoria e Governança e Estruturação Societária",
+    title: "Controladoria, Governança e Arquitetura Organizacional",
     subtitle: "Estruturas de decisão sólidas e segurança jurídica para o crescimento da empresa",
     badge: "Controladoria e Governança",
     icon: Settings,
-    leadParagraph: "Apoiamos conselhos de administração na estruturação de processos decisórios, acordos societários e operações de M&A, com respaldo jurídico completo, incluindo atuação notarial e cartorária.",
+    leadParagraph: "Apoiamos conselhos de administração na estruturação de processos decisórios, acordos societários e operações de M&A, com respaldo técnico completo, incluindo atuação notarial e cartorária.",
     richContent: [
       "Uma governança sólida exige clareza nas estruturas de decisão e segurança jurídica em cada movimento societário. Desenhamos a arquitetura de governança da sua empresa — da composição do conselho às regras de sucessão — alinhada às melhores práticas do IBGC.",
       "Nosso time jurídico conduz due diligence completa em fusões, aquisições, cisões e incorporações, além de formalizar acordos societários, procurações e atos notariais e cartorários necessários para blindar cada decisão estratégica."
@@ -104,8 +104,8 @@ export const servicesContent = {
       "Defesa estratégica em contencioso tributário e direito penal econômico"
     ],
     sidebarInfo: {
-      title: "Garantia de Cadeia",
-      description: "Mais de 70% das interrupções operacionais e multas solidárias B2B decorrem de falhas de conformidade em fornecedores não auditados, e pareceres preventivos reduzem litígios tributários em até 75%.",
+      title: "Continuidade dos Negócios",
+      description: "Após aplicada as auditorias preventivas e a gestão de riscos suas operações ficarão mais claras e seguras, fortalecendo assim os controles internos e ampliando suas atividades B2B e B2C.",
       ctaLabel: "Solicitar Matriz de Riscos"
     },
     media: {

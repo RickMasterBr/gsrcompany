@@ -8,7 +8,7 @@ const geist = Geist({
 });
 
 export const metadata = {
-  title: "GSR Company — Consultoria Estratégica de Alta Confiabilidade",
+  title: "GSR Company — Consultoria Especializada em Negócios Corporativos",
   description: "Segurança patrimonial e empresarial, compliance regulatório, controladoria e governança, auditorias financeiras, investigações de riscos e fraudes e serviços jurídicos notariais e cartoriais. Identificamos riscos antes que se tornem passivos.",
 };
 

@@ -2,11 +2,10 @@ import React from "react";
 import { Mail, MapPin, MessageCircle } from "lucide-react";
 import { COMPANY_EMAIL } from "@/data/siteConfig";
 
-const WHATSAPP_NUMBER = "+55 21 97451-6547";
+const WHATSAPP_NUMBER = "+55 21 99967-7146";
 
 export function Footer({
   logoText = "GSR Company",
-  cnpj = "CNPJ: 00.000.000/0001-00",
   address = "Av. Pres. Antônio Carlos, 58 – 11° andar, Centro, Rio de Janeiro – RJ, CEP: 20020-010",
   email = COMPANY_EMAIL,
   links = [
@@ -36,11 +35,8 @@ export function Footer({
             </span>
           </div>
           <p className="font-sans text-xs text-neutral-400 leading-relaxed max-w-sm">
-            Solidez, inteligência preventiva e governança de riscos para grandes corporações. Assessoria jurídica societária e investigações estratégicas de conformidade.
+            Inteligência para decidir. Estratégia para evoluir.
           </p>
-          <span className="block font-mono text-[10px] text-neutral-500">
-            {cnpj}
-          </span>
         </div>
 
         {/* Links column */}

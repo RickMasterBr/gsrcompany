@@ -92,7 +92,8 @@ export default function LandingPage() {
             variant="background"
             src={hero.video.src}
             poster={hero.video.poster}
-            className="w-full h-full object-cover object-right opacity-85"
+            className="w-full h-full object-cover opacity-85"
+            style={{ transform: "scale(1.2) translateX(12%)" }}
           />
           {/* Subtle gradient overlay to blend video background to white on the left side */}
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />

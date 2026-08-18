@@ -1,6 +1,4 @@
-import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+﻿import { Resend } from "resend";
 
 const SERVICE_LABELS = {
   "seguranca-empresarial": "Segurança Patrimonial e Empresarial",
@@ -12,6 +10,8 @@ const SERVICE_LABELS = {
 };
 
 export async function POST(request) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   let body;
   try {
     body = await request.json();
@@ -21,7 +21,6 @@ export async function POST(request) {
 
   const { nome, email, telefone, servico, mensagem, lgpd } = body;
 
-  // Server-side validation
   if (!nome?.trim() || !email?.trim() || !servico?.trim() || !mensagem?.trim() || lgpd !== true) {
     return Response.json({ success: false, error: "Campos obrigatórios ausentes." }, { status: 400 });
   }
